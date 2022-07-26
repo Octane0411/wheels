@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+}
+
+.wrapper {
+    position: relative;
+}
+
+[type=checkbox] {
+    width: 180px;
+    height: 90px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    margin: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.switch {
+    width: 180px;
+    height: 90px;
+    border-radius: 45px;
+    background: #ffe09d;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.switch::before {
+    content: '';
+    width: 81px;
+    height: 81px;
+    border-radius: 50%;
+    background: #ffffff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60px auto;
+    transition: all 0.3s ease;
+    position: relative;
+    margin-left: 0;
+    box-shadow: 2px 3px 10px -2px rgba(227, 193, 120, 0.9);
+}
+
+[type=checkbox]:checked + .switch {
+    background-color: #1f1f1f;
+}
+
+[type=checkbox]:checked + .switch:before {
+    margin-left: 88px;
+    background-color: #313131;
+    box-shadow: -2px 4px 10px -2px #000;
+}
+
+.switch.circle-screw::before {
+    width: 98px;
+}
+
+[type=checkbox]:checked + .switch.circle-screw::before {
+    width: 98px;
+    margin-left: 72px;
+}
