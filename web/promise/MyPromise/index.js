@@ -215,4 +215,22 @@ MyPromise.prototype.then = function (onFulFilled, onRejected) {
     }
 }
 
+
+/*
+*我们使用Promise/A+官方的测试工具promises-aplus-tests来对我们的MyPromise进行测试，
+* 要使用这个工具我们必须实现一个静态方法deferred，官方对这个方法的定义如下:
+ deferred: 返回一个包含{ promise, resolve, reject }的对象
+ promise 是一个处于pending状态的promise
+ resolve(value) 用value解决上面那个promise
+ reject(reason) 用reason拒绝上面那个promise
+* */
+MyPromise.deferred = function () {
+    let result = {}
+    result.promise = new MyPromise((resolve, reject) => {
+        result.resolve = resolve
+        result.reject = reject
+    })
+    return result
+}
+
 module.exports = MyPromise
