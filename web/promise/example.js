@@ -8,9 +8,16 @@ let promise1 = new MyPromise((resolve) => {
         }
     })
 })
-promise1.then((v) => {
-    console.log(v)
-})
+let p = promise1.then((v) => {
+    console.log("1", v)
+    return 1
+}).then((v) => {
+    console.log("2", v)
+}).then()
+
+setTimeout(() => {
+    console.log(p)
+}, 1000)
 
 let promise2 = new MyPromise((_, reject) => {
     request("https://www.baidu.com", (err, resp) => {
@@ -21,7 +28,7 @@ let promise2 = new MyPromise((_, reject) => {
 })
 
 promise2.then((v) => {
-    console.log(v
-    )}, (reason) => {
-    console.log(reason)
+    console.log("3", v)
+}, (reason) => {
+    console.log("4", reason)
 })
