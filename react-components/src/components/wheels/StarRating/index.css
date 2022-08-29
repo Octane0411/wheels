@@ -1,0 +1,10 @@
+.StarWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Rate {
+    margin-left: 10px;
+    font-size: 50px;
+}

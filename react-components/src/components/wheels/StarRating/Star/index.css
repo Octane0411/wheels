@@ -1,0 +1,13 @@
+.on {
+    margin: 0 5px;
+    color: #e9b63d;
+    user-select: none;
+    font-size: 50px;
+}
+
+.off {
+    margin: 0 5px;
+    color: gray;
+    user-select: none;
+    font-size: 50px;
+}
